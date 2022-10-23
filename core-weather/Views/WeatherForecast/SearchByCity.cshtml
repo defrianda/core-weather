@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model core_weather.Models.SearchByCity
+
+@{
+    ViewData["Title"] = "SearchByCity";
+}
+
+<div class="container">
+    <form method="post">
+        <div class="container">
+            <h1>Search by country name : </h1>
+            <div>
+                <select asp-for="CountryName" class="form-control" placeholder="Country Name"></select>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Search by city name : </h1>
+            <div>
+                <input asp-for="CityName" class="form-control" placeholder="City Name">
+                <button asp-controller="WeatherForecast" asp-action="SearchByCity" class="btn btn-outline-primary">Search</button>
+                <span asp-validation-for="CityName" class="text-danger"></span>
+            </div>
+        </div>
+    </form>
+</div>
